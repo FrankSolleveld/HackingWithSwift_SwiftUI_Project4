@@ -49,7 +49,6 @@ struct ContentView: View {
                             }
                         }
                     }
-                    
                 }
                 VStack(alignment: .center, spacing: 0, content: {
                     Button(action: calculateBedtime) {
@@ -57,11 +56,13 @@ struct ContentView: View {
                             .foregroundColor(.white)
                             .font(.headline)
                             .padding()
-                            .frame(maxWidth: .infinity)
+                            .frame(maxWidth: 360)
                             .background(Color.blue)
                             .clipShape(Capsule())
                     }
                 })
+                .padding()
+                Spacer()
             }
             .navigationBarTitle(Text("BetterRest 😴"))
             .alert(isPresented: $showingAlert, content: {
