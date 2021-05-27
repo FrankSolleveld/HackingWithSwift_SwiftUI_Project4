@@ -20,7 +20,8 @@ struct ContentView: View {
     
     var body: some View {
         NavigationView {
-            VStack {
+            ZStack {
+                VStack {
                 Form {
                     VStack(alignment: .leading, spacing: 0) {
                         Text("When do you want to wake up?")
@@ -50,7 +51,8 @@ struct ContentView: View {
                         }
                     }
                 }
-                VStack(alignment: .center, spacing: 0, content: {
+                }
+                VStack(alignment: .center, spacing: 10, content: {
                     Button(action: calculateBedtime) {
                         Text("Calculate")
                             .foregroundColor(.white)
@@ -60,8 +62,9 @@ struct ContentView: View {
                             .background(Color.blue)
                             .clipShape(Capsule())
                     }
+                    .padding(.top, 150)
+
                 })
-                .padding()
                 Spacer()
             }
             .navigationBarTitle(Text("BetterRest 😴"))
